@@ -12,27 +12,40 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.burak.cookbookcompose.model.Food
 import com.burak.cookbookcompose.ui.theme.CookBookComposeTheme
 
 class MainActivity : ComponentActivity() {
+
+    private val foodList = ArrayList<Food>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             CookBookComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Box(modifier = Modifier.fillMaxSize()) {
+                    Box(modifier = Modifier.padding(innerPadding)) {
 
                     }
                 }
             }
         }
     }
-}
 
+    private fun createData() {
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
+        val pizza = Food("Pizza","dough, cheese, sausage",R.drawable.pizza)
+        val pasta = Food("Pasta","penne, tomatoes, basil",R.drawable.pasta)
+        val salad = Food("Salad","minced meat, bread, rice",R.drawable.salad)
+        val meatball = Food("Meatball","tomato, cucumber, onion",R.drawable.meatball)
+        val bread = Food("Bread","tomato, cucumber, onion",R.drawable.bread)
 
+        foodList.add(pizza)
+        foodList.add(pasta)
+        foodList.add(salad)
+        foodList.add(meatball)
+        foodList.add(bread)
+
+    }
 }
