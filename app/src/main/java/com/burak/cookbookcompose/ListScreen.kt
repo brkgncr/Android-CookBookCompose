@@ -53,6 +53,7 @@ fun FoodRow(food: Food) {
     }
 }
 
+/*
 @Preview(showBackground = true)
 @Composable
 fun FoodListPreview() {
@@ -78,3 +79,4 @@ fun FoodListPreview() {
         FoodList(foodList)
     }
 }
+*/
